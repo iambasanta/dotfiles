@@ -1,12 +1,5 @@
 # A valid snippet should starts with:
-#
-#		snippet trigger_word [ "description" [ options ] ]
-#
-# and end with:
-#
-#		endsnippet
-#
-# Snippet options:
+# #		snippet trigger_word [ "description" [ options ] ] # # and end with: # #		endsnippet # # Snippet options:
 #
 #		b - Beginning of line.
 #		i - In-word expansion.
@@ -40,13 +33,13 @@ function ${1:function_name}(${2:argument}) {
 endsnippet
 
 snippet vf "Function assigned to var"
-${1:var }${2:function_name} = function $2 (${3:argument}) {
+${1:var } ${2:function_name} = function $2 (${3:argument}) {
 	${VISUAL}$0
 }
 endsnippet
 
 snippet af "Arrow function" b
-${1:var}${2:function_name} = (${3:argument})=>{
+${1:var} ${2:function_name} = (${3:argument})=>{
 	${VISUAL}$0
 }
 endsnippet
