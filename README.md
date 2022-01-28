@@ -146,3 +146,7 @@ Settings for coc-settings.json
     {
         "coc.preferences.formatOnSaveFiletypes": ["css", "markdown", "javascript", "sql", "html", "yaml",  "json", "vue"]
     }
+
+Copy `ultisnips` from `vim` folder to `~/.config/coc` to use snippets
+
+    cp -r ~/Downloads/dotfiles/vim/ultisnips ~/.config/coc
