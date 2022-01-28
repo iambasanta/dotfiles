@@ -1,0 +1,252 @@
+// Place your key bindings in this file to override the defaults
+[
+    /**
+    * Panels
+    **/
+    {
+        "key": "ctrl+k ctrl+e",
+        "command": "workbench.view.explorer"
+    },
+    {
+        "key": "ctrl+k ctrl+g",
+        "command": "workbench.view.scm"
+    },
+    {
+        "key": "ctrl+k ctrl+d",
+        "command": "workbench.view.debug"
+    },
+    {
+        "key": "ctrl+k ctrl+x",
+        "command": "workbench.extensions.action.showInstalledExtensions"
+    },
+    {
+        "key": "ctrl+k ctrl+b",
+        "command": "workbench.action.toggleSidebarVisibility"
+    },
+    {
+        "key": "ctrl+e",
+        "command": "workbench.action.focusActiveEditorGroup"
+    },
+    {
+        "key": "ctrl+t",
+        "command": "workbench.action.terminal.toggleTerminal"
+    },
+
+    /**
+    * Toggle Font Size
+    **/
+    {
+        "key": "ctrl+k ctrl+k",
+        "command": "toggle",
+        "when": "editorTextFocus",
+        "args": {
+            "id": "fontSize",
+            "value": [
+                {
+                    "editor.fontSize": 15,
+                    "editor.lineHeight": 45
+                },
+                {
+                    "editor.fontSize": 12,
+                    "editor.lineHeight": 0
+                }
+            ]
+        }
+    },
+
+    /**
+    * File Explorer
+    **/
+    {
+        "key": "ctrl+n",
+        "command": "explorer.newFile",
+        "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus"
+    },
+    {
+        "key": "shift+ctrl+n",
+        "command": "explorer.newFolder",
+        "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus"
+    },
+
+    /**
+    * Multi-Cursor
+    **/
+    {
+        "key": "cmd+backspace",
+        "command": "editor.action.moveSelectionToPreviousFindMatch",
+        "when": "editorFocus && editorHasMultipleSelections"
+    },
+    {
+        "key": "cmd+k cmd+d",
+        "command": "editor.action.moveSelectionToNextFindMatch",
+        "when": "editorFocus && editorHasMultipleSelections"
+    },
+    {
+        "key": "cmd+right",
+        "command": "editor.action.insertCursorAtEndOfEachLineSelected",
+        "when": "editorFocus && editorHasSelection"
+    },
+
+    /**
+    * Split Panels
+    **/
+    {
+        "key": "ctrl+w",
+        "command": "workbench.action.joinAllGroups",
+        "when": "editorFocus"
+    },
+    {
+        "key": "ctrl+n",
+        "command": "workbench.action.splitEditor",
+        "when": "editorFocus"
+    },
+    {
+        "key": "ctrl+l",
+        "command": "workbench.action.navigateRight",
+        "when": "editorFocus"
+    },
+    {
+        "key": "ctrl+h",
+        "command": "workbench.action.navigateLeft",
+        "when": "editorFocus"
+    },
+    {
+        "key": "ctrl+=",
+        "command": "workbench.action.increaseViewSize",
+        "when": "editorFocus"
+    },
+    {
+        "key": "ctrl+-",
+        "command": "workbench.action.decreaseViewSize",
+        "when": "editorFocus"
+    },
+
+    /**
+    * Terminal Split Panel
+    **/
+    {
+        "key": "ctrl+n",
+        "command": "workbench.action.terminal.split",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "ctrl+l",
+        "command": "workbench.action.terminal.focusNextPane",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "ctrl+h",
+        "command": "workbench.action.terminal.focusPreviousPane",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "ctrl+w",
+        "command": "workbench.action.terminal.kill",
+        "when": "terminalFocus"
+    },
+
+
+    /**
+     * Line Manipulation
+    **/
+    {
+        "key": "ctrl+l",
+        "command": "editor.action.copyLinesDownAction",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+j",
+        "command": "editor.action.joinLines",
+        "when": "editorTextFocus"
+    },
+    /**
+    * Emmet
+    **/
+    {
+        "key": "ctrl+m ctrl+i",
+        "command": "editor.emmet.action.balanceIn",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+m ctrl+o",
+        "command": "editor.emmet.action.balanceOut",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+m ctrl+w",
+        "command": "editor.emmet.action.wrapWithAbbreviation",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+m ctrl+m",
+        "command": "editor.emmet.action.matchTag",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+m ctrl+e",
+        "command": "editor.action.smartSelect.expand",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+m ctrl+r",
+        "command": "editor.emmet.action.updateTag",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+m ctrl+backspace",
+        "command": "editor.emmet.action.removeTag",
+        "when": "editorTextFocus"
+    },
+
+    /**
+    * amVim Finder Fix
+    **/
+    {
+        "key": "enter",
+        "command": "editor.action.nextMatchFindAction",
+        "when": "findWidgetVisible"
+    },
+    {
+        "key": "shift+enter",
+        "command": "editor.action.previousMatchFindAction",
+        "when": "findWidgetVisible"
+    },
+
+    /**
+    * IntelliSense
+    **/
+    {
+        "key": "ctrl+r",
+        "command": "workbench.action.gotoSymbol",
+    },
+    {
+        "key": "ctrl+shift+r",
+        "command": "workbench.action.showAllSymbols"
+    },
+    {
+        "key": "ctrl+k ctrl+enter",
+        "command": "editor.action.goToDeclaration",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+k ctrl+i",
+        "command": "namespaceResolver.import"
+    },
+
+    /**
+    * Open DevTools
+    **/
+    {
+        "key": "ctrl+shift+i",
+        "command": "workbench.action.toggleDevTools"
+    },
+
+    /**
+    * Hide Toaster Notifications
+    **/
+    {
+        "key": "escape",
+        "command": "notifications.hideToasts",
+        "when": "notificationToastsVisible"
+    }
+]
