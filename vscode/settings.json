@@ -24,12 +24,8 @@
     "workbench.statusBar.visible": false,
     "editor.minimap.enabled": false,
     "workbench.editor.showTabs": false,
-    "editor.lineNumbers": "off",
+    "editor.lineNumbers": "on",
     "editor.renderIndentGuides": false,
-    // "timeline.excludeSources": [
-    //     "git-history"
-    // ],
-
 
     /**
     * Silence The Noise
@@ -60,8 +56,8 @@
     /**
     * Typography
     **/
-    "workbench.colorTheme": "Palenight (Mild Contrast)",
-    // "editor.fontFamily": "Fira Code",
+    "workbench.colorTheme": "Palenight Theme",
+    "editor.fontFamily": "Fira Code",
     "editor.fontSize": 15,
     "editor.lineHeight": 45,
     "editor.suggestFontSize": 15,
@@ -70,7 +66,7 @@
     "terminal.integrated.lineHeight": 1.5,
     "window.menuBarVisibility": "toggle",
 
-        /**
+    /**
     * Find
     **/
     "search.useIgnoreFiles": false,

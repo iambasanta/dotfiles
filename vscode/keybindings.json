@@ -72,17 +72,17 @@
     * Multi-Cursor
     **/
     {
-        "key": "cmd+backspace",
+        "key": "ctrl+backspace",
         "command": "editor.action.moveSelectionToPreviousFindMatch",
         "when": "editorFocus && editorHasMultipleSelections"
     },
     {
-        "key": "cmd+k cmd+d",
+        "key": "ctrl+k ctrl+d",
         "command": "editor.action.moveSelectionToNextFindMatch",
         "when": "editorFocus && editorHasMultipleSelections"
     },
     {
-        "key": "cmd+right",
+        "key": "ctrl+right",
         "command": "editor.action.insertCursorAtEndOfEachLineSelected",
         "when": "editorFocus && editorHasSelection"
     },
@@ -90,11 +90,6 @@
     /**
     * Split Panels
     **/
-    {
-        "key": "ctrl+w",
-        "command": "workbench.action.joinAllGroups",
-        "when": "editorFocus"
-    },
     {
         "key": "ctrl+n",
         "command": "workbench.action.splitEditor",
@@ -145,15 +140,9 @@
         "when": "terminalFocus"
     },
 
-
     /**
      * Line Manipulation
     **/
-    {
-        "key": "ctrl+l",
-        "command": "editor.action.copyLinesDownAction",
-        "when": "editorTextFocus"
-    },
     {
         "key": "ctrl+j",
         "command": "editor.action.joinLines",
