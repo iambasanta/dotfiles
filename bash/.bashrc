@@ -105,8 +105,13 @@ alias nv=nvim
 #aliases for PHP test
 #run all the tests
 alias rat='vendor/bin/phpunit'
+
 #filter and run specific test
 alias frt='vendor/bin/phpunit --filter'
+
+#aliases for php artisan commands
+alias artisan='php artisan'
+alias mfs='php artisan migrate:fresh --seed'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
