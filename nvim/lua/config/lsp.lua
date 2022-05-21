@@ -47,17 +47,6 @@ capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 -- emmet
 local configs = require'lspconfig/configs'
-configs.ls_emmet = {
-  default_config = {
-    cmd = { 'ls_emmet', '--stdio' };
-    filetypes = { 'html', 'css', 'scss' }; -- Add the languages you use, see language support
-    root_dir = function(fname)
-      return vim.loop.cwd()
-    end;
-    settings = {};
-  };
-}
-nvim_lsp.ls_emmet.setup{ capabilities = capabilities }
 
 nvim_lsp.tsserver.setup {
   on_attach = on_attach,
@@ -72,6 +61,14 @@ nvim_lsp.cssls.setup {
     capabilities = capabilities
 }
 
+nvim_lsp.intelephense.setup{
+    capabilities = capabilities
+}
+
+nvim_lsp.phpactor.setup{
+    capabilities = capabilities
+}
+
 nvim_lsp.clangd.setup {
     on_attach = on_attach,
     cmd = { "clangd", "--background-index" },
@@ -83,3 +80,4 @@ nvim_lsp.vuels.setup {
     on_attach = on_attach,
     capabilities = capabilities
 }
+

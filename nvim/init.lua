@@ -1,29 +1,30 @@
+-- options
+require('options')
+
+-- keybindings(mappings)
+require('mappings')
+
 -- plugins
-require 'plugins'
+require('plugins')
 
--- keybinds
-require 'keybinds'
-
--- sets
-require 'options'
-
--- lsp
-require 'config.lsp'
-
--- auto completion
-require 'config.cmp'
+-- treeistter
+require('config.treesitter')
 
 -- telescope
-require 'config.telescope'
+require('config.telescope')
 
--- treesitter
-require 'config.treesitter'
+-- lsp
+require('config.lsp')
 
--- autopairs
-require 'config.autopairs'
+-- lsp-installer
+require('config.lsp-installer')
 
--- colorizer
-require 'config.colorizer'
+-- auto completion
+require('config.cmp')
 
--- indentation guides
-require 'config.indent_blankline'
+-- autoparis
+require('config.autopairs')
+
+-- comment
+require('config.comment')
+
