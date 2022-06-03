@@ -12,7 +12,7 @@ magenta = #d3869b
 cyan = #8ec07c
 orange = #fe8019
 
-[bar/basanta]
+[bar/main]
 monitor = ${env:MONITOR}
 width = 100%
 height = 30
@@ -35,9 +35,9 @@ cursor-click = pointer
 cursor-scroll = ns-resize
 
 ; Module Positioning
-modules-left = term hostname
+modules-left = term hostname xwindow
 modules-center = workspaces
-modules-right = shot pulseaudio date battery powermenu
+modules-right = shot pulseaudio wlan date battery powermenu  
 
 [module/xwindow]
 type = internal/xwindow
@@ -64,8 +64,8 @@ enable-scroll = false
 format-padding = 1
 format = <label-state>
 label-monitor = %name%
-icon-default = ""
-label-active = ""
+icon-default = ""
+label-active = ""
 label-active-foreground = ${colors.blue}
 label-active-padding = 1
 label-occupied = ""
@@ -103,6 +103,9 @@ click-middle = "pavucontrol"
 interval = 5
 label-active-font = 1
 
+[module/microphone]
+type = internal/microphone
+
 [module/battery]
 type = internal/battery
 battery = BAT0
@@ -138,7 +141,6 @@ label-close = ""
 label-separator = " "
 label-separator-foreground = ${colors.foreground}
 menu-0-0 = ""
-menu-0-0-exec = sudo reboot
-menu-0-1 = "  "
-menu-0-1-exec = sudo poweroff
-
+menu-0-0-exec = reboot
+menu-0-1 = ""
+menu-0-1-exec = poweroff

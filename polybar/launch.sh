@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
 # Terminate already running bar instances
-# If all your bars have ipc enabled, you can use 
-killall -q polybar
+killall polybar
 
 # Launch bar
-polybar basanta 
+while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
+polybar main 
 
