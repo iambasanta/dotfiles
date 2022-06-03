@@ -37,7 +37,7 @@ cursor-scroll = ns-resize
 ; Module Positioning
 modules-left = term hostname xwindow
 modules-center = workspaces
-modules-right = shot pulseaudio wlan date battery powermenu  
+modules-right = shot wlan pulseaudio date battery powermenu  
 
 [module/xwindow]
 type = internal/xwindow
@@ -103,9 +103,6 @@ click-middle = "pavucontrol"
 interval = 5
 label-active-font = 1
 
-[module/microphone]
-type = internal/microphone
-
 [module/battery]
 type = internal/battery
 battery = BAT0
@@ -135,3 +132,18 @@ menu-0-0 = ""
 menu-0-0-exec = reboot
 menu-0-1 = ""
 menu-0-1-exec = poweroff
+
+[module/wlan]
+type = internal/network
+interface = wlp3s0
+interval = 1.0
+
+format-connected = <label-connected>
+format-connected-padding = 1
+label-connected = %{A1:wifimenu:}直  %essid%%{A}
+label-connected-foreground = ${colors.foreground}
+
+format-disconnected = <label-disconnected>
+format-disconnected-padding = 1
+label-disconnected = %{A1:wifimenu:}睊%{A}
+label-disconnected-foreground = ${colors.gray}
