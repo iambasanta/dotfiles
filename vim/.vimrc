@@ -52,6 +52,7 @@ endfunction
 "netrw file explorer
 let g:netrw_banner =0
 let g:netrw_browse_split =2
+let g:netrw_winsize =25
 
 "----------PLUGINS----------
 call plug#begin('~/.vim/plugged')
@@ -66,6 +67,7 @@ call plug#begin('~/.vim/plugged')
     "color schemes/themes
     "Plug 'arcticicestudio/nord-vim'
     "Plug 'joshdick/onedark.vim'
+    Plug 'drewtempelmeyer/palenight.vim'
     Plug 'morhetz/gruvbox'
 
     "undotree
@@ -98,13 +100,12 @@ call plug#end()
 
 "Theme
 syntax enable
-"colorscheme nord
-"colorscheme onedark
 colorscheme gruvbox
+"colorscheme palenight
 
 "transparent background
-hi! Normal ctermbg=NONE guibg=NONE
-hi! NonText ctermbg=NONE guibg=NONE guifg=NONE ctermfg=NONE
+" hi! Normal ctermbg=NONE guibg=NONE
+" hi! NonText ctermbg=NONE guibg=NONE guifg=NONE ctermfg=NONE
 
 
 
@@ -115,15 +116,19 @@ let mapleader = " "
 nnoremap <Leader>q :wq<CR>
 nnoremap <Leader>w :w<CR>
 
+"navigation between window splits
+nnoremap <Leader>h :wincmd h<CR>
+nnoremap <Leader>j :wincmd j<CR>
+nnoremap <Leader>k :wincmd k<CR>
+nnoremap <Leader>l :wincmd l<CR>
+nnoremap <Leader>u :UndotreeShow<CR>
+nnoremap <Leader>fe :Vex<CR>
+
+"make an executable file
+nnoremap <Leader>x :!chmod +x %<CR>
+
 "escape
 inoremap jk <Esc>
-
-nnoremap <leader>h :wincmd h<CR>
-nnoremap <leader>j :wincmd j<CR>
-nnoremap <leader>k :wincmd k<CR>
-nnoremap <leader>l :wincmd l<CR>
-nnoremap <leader>u :UndotreeShow<CR>
-nnoremap <leader>fe :wincmd v<bar> :Ex <bar> :vertical resize 30<CR>
 
 "search files
 nnoremap <C-p> :Files<cr>
@@ -132,8 +137,8 @@ nnoremap <C-p> :Files<cr>
 nnoremap <f5> :w <bar> !g++ -std=c++11 % -o %:r && ./%:r <CR>
 
 "open files in browser
-nnoremap <leader>of :exe ':silent !firefox %'<CR>
-nnoremap <leader>oc :exe ':silent !chromium-browser %'<CR>
+nnoremap <Leader>of :exe ':silent !firefox %'<CR>
+nnoremap <Leader>oc :exe ':silent !chromium-browser %'<CR>
 
 "indent
 vnoremap < <gv
@@ -166,11 +171,11 @@ inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
                               \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
 "rename
-nmap <leader>rn <Plug>(coc-rename)
+nmap <Leader>rn <Plug>(coc-rename)
 
 "format 
-xmap <leader>fs  <Plug>(coc-format-selected)
-nmap <leader>fs  <Plug>(coc-format-selected)
+xmap <Leader>fs  <Plug>(coc-format-selected)
+nmap <Leader>fs  <Plug>(coc-format-selected)
 
 "diagnostics
 nmap <silent> [g <Plug>(coc-diagnostic-prev)
@@ -186,9 +191,9 @@ nmap <silent> gr <Plug>(coc-references)
 "nnoremap <silent> K :call <SID>show_documentation()<CR>
 
 "mappings for git
-nmap <leader>gs :G<CR>
-nmap <leader>gl :diffget //3<CR>
-nmap <leader>gf :diffget //2<CR>
+nmap <Leader>gs :G<CR>
+nmap <Leader>gl :diffget //3<CR>
+nmap <Leader>gf :diffget //2<CR>
 
 "behave vim
 nnoremap Y y$
@@ -196,3 +201,7 @@ nnoremap Y y$
 "moving text
 vnoremap J :m '>+1'<CR>gv=gv
 vnoremap K :m '>-2'<CR>gv=gv
+
+"make border around
+nmap <Leader>ba :.!toilet -w 200 -f term -F border<CR>
+vmap <Leader>ba :.!toilet -w 200 -f term -F border<CR>
