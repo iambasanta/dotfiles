@@ -18,10 +18,13 @@ local on_attach = function(client, bufnr)
 end
 
 local language_servers = {
+    "ccls",
     "html",
     "cssls",
+    "emmet_ls",
     "tsserver",
-    "intelephense"
+    "intelephense",
+    "tailwindcss"
 }
 
 for _, server in ipairs(language_servers)do
