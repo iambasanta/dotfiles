@@ -189,6 +189,9 @@ focus_follows_mouse no
 ## lock screen
 bindsym $mod+shift+x exec i3lock
 
+## open chromium-browser
+bindsym $mod+b exec chromium-browser
+
 # Screen brightness controls
 bindsym XF86MonBrightnessUp exec light -A 1 # increase screen brightness
 bindsym XF86MonBrightnessDown exec light -U 1 # decrease screen brightness
