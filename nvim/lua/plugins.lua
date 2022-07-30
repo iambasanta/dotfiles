@@ -1,44 +1,53 @@
-vim.cmd('packadd packer.nvim')
+vim.cmd [[packadd packer.nvim]]
 
-return require('packer').startup(
-    function()
-        -- plugin manager
-        use 'wbthomason/packer.nvim'
+return require("packer").startup(function()
+    -- plugin manager
+    use "wbthomason/packer.nvim"
 
-        -- treesitter
-        use {'nvim-treesitter/nvim-treesitter'}
+    -- colorschemes
+    use "folke/tokyonight.nvim"
 
-        -- lsp
-        use 'neovim/nvim-lspconfig'
+    -- nvim-treesitter
+    use {
+        "nvim-treesitter/nvim-treesitter", 
+        run = ":TSUpdate"
+    }
 
-        -- lsp installer
-        use 'williamboman/nvim-lsp-installer'
+    -- telescope
+    use {
+        "nvim-telescope/telescope.nvim", tag = "0.1.0",
+        requires = { {"nvim-lua/plenary.nvim"}}
+    }
 
-        -- autocompletion
-        use {
-            'hrsh7th/cmp-nvim-lsp',
-            'hrsh7th/cmp-buffer',
-            'hrsh7th/nvim-cmp'
-        }
+    -- lsp
+    use "neovim/nvim-lspconfig"
 
-        -- autopairs
-        use 'windwp/nvim-autopairs'
+    -- auto-completion
+    use {
+        "hrsh7th/nvim-cmp",
+        "hrsh7th/cmp-nvim-lsp",
+        "hrsh7th/cmp-buffer",
+        "hrsh7th/cmp-path"
+    }
 
-        -- comment
-        use {
-            'numToStr/Comment.nvim',
-            config = function()
-                require('Comment').setup()
-            end
-        }
+    -- add pictograms
+    use "onsails/lspkind.nvim"
 
-        -- telescope
-        use {
-            'nvim-telescope/telescope.nvim',
-            requires = { {'nvim-lua/plenary.nvim'} }
-        }
+    -- autopairs
+    use "windwp/nvim-autopairs"
 
-        -- color scheme
-        use 'morhetz/gruvbox'
-        use 'drewtempelmeyer/palenight.vim'
-    end)
+    -- snippets
+    use{
+        "L3MON4D3/LuaSnip",
+        "saadparwaiz1/cmp_luasnip"
+    }
+
+    -- commenter
+    use {
+        "numToStr/Comment.nvim",
+        config = function()
+            require("Comment").setup()
+        end
+    }
+
+end)
