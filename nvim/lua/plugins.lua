@@ -36,12 +36,6 @@ return require("packer").startup(function()
     -- autopairs
     use "windwp/nvim-autopairs"
 
-    -- snippets
-    use{
-        "L3MON4D3/LuaSnip",
-        "saadparwaiz1/cmp_luasnip"
-    }
-
     -- commenter
     use {
         "numToStr/Comment.nvim",
