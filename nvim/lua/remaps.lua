@@ -33,3 +33,22 @@ nnoremap("<C-p>","<cmd>Telescope find_files<CR>")
 -- move selected text
 vnoremap("J", ":m '>+1<CR>gv=gv")
 vnoremap("K", ":m '<-2<CR>gv=gv")
+
+-- build and execute c or c++ sourcecode
+local lang_maps = {
+    c = { build = "gcc % -o %:r", exec = "./%:r" },
+    cpp = { build = "g++ % -o %:r", exec = "./%:r" },
+}
+
+for lang, src in pairs(lang_maps) do
+    if src.build ~= nil then
+        vim.api.nvim_create_autocmd(
+        "FileType",
+        { command = "nnoremap <leader>b :!" .. src.build .. "<CR>", pattern = lang }
+        )
+    end
+    vim.api.nvim_create_autocmd(
+    "FileType",
+    { command = "nnoremap <leader>e :split<CR>:terminal " .. src.exec .. "<CR>", pattern = lang }
+    )
+end
