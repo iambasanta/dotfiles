@@ -22,6 +22,7 @@ local language_servers = {
     "html",
     "cssls",
     "emmet_ls",
+    "pyright",
     "tsserver",
     "intelephense",
     "tailwindcss"
