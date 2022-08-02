@@ -14,6 +14,9 @@ export PATH="$PATH:$HOME/.config/composer/vendor/bin"
 # for go
 export PATH=$PATH:/usr/local/go/bin
 
+#for jupyter
+export PATH=$PATH:/home/basanta/.local/bin
+
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
 HISTCONTROL=ignoreboth
