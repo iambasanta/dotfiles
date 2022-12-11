@@ -20,3 +20,8 @@ keymap.set("n", "<Leader>l", ":wincmd l<CR>")
 
 -- close current split
 keymap.set("n", "<Leader>cs", ":close<CR>")
+
+-- open telescope for fuzzy finding
+keymap.set("n", "<C-p>", "<cmd>Telescope find_files<CR>")
+keymap.set("n", "<Leader>fg", "<cmd>Telescope live_grep<CR>")
+keymap.set("n", "<Leader>fs", "<cmd>Telescope grep_string<CR>")
