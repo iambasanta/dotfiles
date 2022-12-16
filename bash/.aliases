@@ -1,6 +1,8 @@
 # Aliases
 
 # aliases to run xbps commands
+alias poweroff="sudo poweroff"
+alias reboot="sudo reboot"
 alias update="sudo xbps-install -Su"
 alias install="sudo xbps-install"
 alias remove="sudo xbps-remove"
@@ -9,3 +11,9 @@ alias query="xbps-query -Rs"
 # generals
 alias v="vim"
 alias nv="nvim"
+
+# laravel sail
+alias sail="vendor/bin/sail"
+
+# execute tmux sessionizer
+bind '"\C-f":"./tmux-sessionizer.sh\n"'
