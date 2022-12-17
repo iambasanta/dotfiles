@@ -28,7 +28,7 @@ return require("packer").startup(function(use)
 	use("wbthomason/packer.nvim")
 
 	-- colorscheme
-	use("folke/tokyonight.nvim")
+	use({ "ellisonleao/gruvbox.nvim" })
 
 	-- display hex colors
 	use("norcalli/nvim-colorizer.lua")
@@ -45,30 +45,45 @@ return require("packer").startup(function(use)
 
 	-- lsp
 	use({
-		"neovim/nvim-lspconfig",
-		"hrsh7th/cmp-nvim-lsp",
-		"williamboman/mason.nvim",
-		"williamboman/mason-lspconfig.nvim",
+		"VonHeikemen/lsp-zero.nvim",
+		requires = {
+			-- LSP Support
+			{ "neovim/nvim-lspconfig" },
+			{ "williamboman/mason.nvim" },
+			{ "williamboman/mason-lspconfig.nvim" },
+
+			-- Autocompletion
+			{ "hrsh7th/nvim-cmp" },
+			{ "hrsh7th/cmp-buffer" },
+			{ "hrsh7th/cmp-path" },
+			{ "saadparwaiz1/cmp_luasnip" },
+			{ "hrsh7th/cmp-nvim-lsp" },
+			{ "hrsh7th/cmp-nvim-lua" },
+
+			-- Snippets
+			{ "L3MON4D3/LuaSnip" },
+			{ "rafamadriz/friendly-snippets" },
+		},
 	})
-
-	-- autocompletion
-	use({
-		"hrsh7th/nvim-cmp",
-		"hrsh7th/cmp-buffer",
-		"hrsh7th/cmp-path",
-	})
-
-	-- snippets
-	use("L3MON4D3/LuaSnip")
-
-	-- essentials
-	use("tpope/vim-surround")
-	use("onsails/lspkind.nvim") -- pictograms
-	use({ "glepnir/lspsaga.nvim", branch = "main" }) -- enhanced lsp uis
 
 	-- formatting & linting
 	use("jose-elias-alvarez/null-ls.nvim")
 	use("jayp0521/mason-null-ls.nvim")
+
+	-- harpoon
+	use("theprimeagen/harpoon")
+
+	-- undotree
+	use("mbbill/undotree")
+
+	-- git
+	use("tpope/vim-fugitive")
+
+	-- enhanced lsp uis
+	use({ "glepnir/lspsaga.nvim", branch = "main" })
+
+	-- surroundings
+	use("tpope/vim-surround")
 
 	-- auto closing
 	use("windwp/nvim-autopairs")

@@ -20,3 +20,9 @@ telescope.setup({
 		},
 	},
 })
+
+-- keymaps for fuzzy finding
+vim.keymap.set("n", "<C-s>", "<cmd>Telescope find_files<CR>")
+vim.keymap.set("n", "<C-p>", "<cmd>Telescope git_files<CR>")
+vim.keymap.set("n", "<Leader>fg", "<cmd>Telescope live_grep<CR>")
+vim.keymap.set("n", "<Leader>fs", "<cmd>Telescope grep_string<CR>")
