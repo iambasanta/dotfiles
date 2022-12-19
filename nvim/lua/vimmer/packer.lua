@@ -24,11 +24,12 @@ if not status then
 	return
 end
 
-return require("packer").startup(function(use)
+return packer.startup(function(use)
 	use("wbthomason/packer.nvim")
 
 	-- colorscheme
 	use({ "ellisonleao/gruvbox.nvim" })
+	use("michaeldyrynda/carbon")
 
 	-- display hex colors
 	use("norcalli/nvim-colorizer.lua")
