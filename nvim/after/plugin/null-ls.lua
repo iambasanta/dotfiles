@@ -12,6 +12,7 @@ local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 -- configure null_ls
 null_ls.setup({
 	sources = {
+		formatting.blade_formatter,
 		formatting.prettier,
 		formatting.stylua,
 		diagnostics.eslint_d,

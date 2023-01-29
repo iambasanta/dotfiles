@@ -52,6 +52,7 @@ return packer.startup(function(use)
 			{ "neovim/nvim-lspconfig" },
 			{ "williamboman/mason.nvim" },
 			{ "williamboman/mason-lspconfig.nvim" },
+			{ "onsails/lspkind.nvim" },
 
 			-- Autocompletion
 			{ "hrsh7th/nvim-cmp" },
@@ -80,9 +81,6 @@ return packer.startup(function(use)
 	-- git
 	use("tpope/vim-fugitive")
 
-	-- enhanced lsp uis
-	use({ "glepnir/lspsaga.nvim", branch = "main" })
-
 	-- surroundings
 	use("tpope/vim-surround")
 
@@ -91,6 +89,9 @@ return packer.startup(function(use)
 
 	-- git integration
 	use("lewis6991/gitsigns.nvim")
+
+	-- treesitter
+	use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
 
 	if packer_bootstrap then
 		require("packer").sync()

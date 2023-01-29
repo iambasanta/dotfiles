@@ -3,13 +3,17 @@ if not lsp_status then
 	return
 end
 
+local luasnip_status, luasnip = pcall(require, "luasnip")
+if not luasnip_status then
+	return
+end
+
 lsp.preset("recommended")
 
 lsp.ensure_installed({
-	"html",
-	"cssls",
-	"eslint",
 	"tsserver",
+	"sumneko_lua",
+	"rust_analyzer",
 })
 
 local cmp = require("cmp")
@@ -23,7 +27,19 @@ local cmp_mappings = lsp.defaults.cmp_mappings({
 })
 
 lsp.setup_nvim_cmp({
+	snippet = {
+		expand = function(args)
+			luasnip.lsp_expand(args.body)
+		end,
+	},
 	mapping = cmp_mappings,
+
+	sources = {
+		{ name = "path" },
+		{ name = "luasnip" },
+		{ name = "nvim_lsp", keyword_length = 3 },
+		{ name = "buffer", keyword_length = 3 },
+	},
 })
 
 lsp.set_preferences({
@@ -58,13 +74,5 @@ lsp.on_attach(function(client, bufnr)
 	vim.keymap.set("n", "<Leader>ca", vim.lsp.buf.code_action, opts)
 	vim.keymap.set("n", "<Leader>rn", vim.lsp.buf.rename, opts)
 end)
-
-lsp.setup_nvim_cmp({
-	sources = {
-		{ name = "path" },
-		{ name = "nvim_lsp", keyword_length = 3 },
-		{ name = "buffer", keyword_length = 3 },
-	},
-})
 
 lsp.setup()
