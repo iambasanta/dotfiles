@@ -12,7 +12,6 @@ lsp.preset("recommended")
 
 lsp.ensure_installed({
 	"tsserver",
-	"sumneko_lua",
 	"rust_analyzer",
 })
 
@@ -32,6 +31,7 @@ lsp.setup_nvim_cmp({
 			luasnip.lsp_expand(args.body)
 		end,
 	},
+
 	mapping = cmp_mappings,
 
 	sources = {
@@ -45,24 +45,15 @@ lsp.setup_nvim_cmp({
 lsp.set_preferences({
 	suggest_lsp_servers = true,
 	sign_icons = {
-		error = "",
-		warn = "",
-		hint = "ﯧ",
-		info = "",
+		error = "E",
+		warn = "W",
+		hint = "H",
+		info = "I",
 	},
-})
-
-vim.diagnostic.config({
-	virtual_text = true,
 })
 
 lsp.on_attach(function(client, bufnr)
 	local opts = { buffer = bufnr, remap = false }
-
-	if client.name == "eslint" then
-		vim.cmd.LspStop("eslint")
-		return
-	end
 
 	vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
 	vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
@@ -76,3 +67,7 @@ lsp.on_attach(function(client, bufnr)
 end)
 
 lsp.setup()
+
+vim.diagnostic.config({
+	virtual_text = true,
+})
