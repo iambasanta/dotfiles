@@ -35,11 +35,11 @@ keymap.set("n", "<Leader>j", ":wincmd j<CR>")
 keymap.set("n", "<Leader>k", ":wincmd k<CR>")
 keymap.set("n", "<Leader>l", ":wincmd l<CR>")
 
--- close current split
+-- close unfocused split
 keymap.set("n", "<Leader>cs", ":close<CR>")
 
 -- search and replace
-keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+keymap.set("n", "<Leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
 -- create an executable file
-keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
+keymap.set("n", "<Leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
