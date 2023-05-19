@@ -19,13 +19,16 @@ scrolling:
 # Font customization
 font:
   normal:
-    family: Hack Nerd Font
+    family: Jet Brains Mono
+    # family: Hack Nerd Font
     style: Regular
   bold:
-    family: Hack Nerd Font
+    family: Jet Brains Mono
+    # family: Hack Nerd Font
     style: Bold
   italic:
-    family: Hack Nerd Font
+    family: Jet Brains Mono
+    # family: Hack Nerd Font
     style: Italic
   size: 9
 draw_bold_text_with_bright_colors: true
@@ -60,10 +63,8 @@ colors:
 
 cursor:
   style:
-    shape: block
-    blinking: off
-    blink-interval: 750
-    unfocused_hollow: true
+    shape: "Block"
+    blinking: "Off"
 
 # Key bindings
 key_bindings:
