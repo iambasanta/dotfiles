@@ -1,19 +1,35 @@
-# Aliases
+#           _ _                     
+#      __ _| (_) __ _ ___  ___  ___ 
+#     / _` | | |/ _` / __|/ _ \/ __|
+#    | (_| | | | (_| \__ \  __/\__ \
+#     \__,_|_|_|\__,_|___/\___||___/
+#     
 
-# aliases to run xbps commands
+alias ..='cd ..'
+alias ...='cd ../..'
+alias cdl='cd $1 && ls'
+alias ls='ls --color=auto'
+alias rm='rm -i'
+alias mkcd='mkcd_alias() { mkdir -p "$1" && cd "$1"; }; mkcd_alias'
+
+# system
 alias poweroff="sudo poweroff"
 alias reboot="sudo reboot"
+
+# aliases to run xbps commands
 alias update="sudo xbps-install -Su"
 alias install="sudo xbps-install"
-alias remove="sudo xbps-remove"
+alias remove="sudo xbps-remove -R"
 alias query="xbps-query -Rs"
 
-# generals
+# vim and neovim
 alias v="vim"
 alias nv="nvim"
 
-# laravel sail
+# PHP & Laravel
+# alias php="php8.2"
 alias sail="vendor/bin/sail"
+alias spa="vendor/bin/sail php artisan"
 
 # execute tmux sessionizer
 bind '"\C-f":"./tmux-sessionizer.sh\n"'
