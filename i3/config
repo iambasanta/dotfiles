@@ -185,21 +185,20 @@ bindsym $mod+r mode "resize"
 
 focus_follows_mouse no
 
-# Autostart
 # Set wallpaper
-exec_always feh --bg-scale -r -z $HOME/Pictures/wallpapers/laracasts/
+exec_always feh --bg-scale -r -z $HOME/Pictures/wallpapers
+
+# Open chromium
+bindsym $mod+b exec chromium
+
+# Launch picom
+exec_always --no-startup-id picom 
 
 # Launch polybar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
-# Launch picom for transparency
-exec_always --no-startup-id picom
-
-# Open chromium browser
-bindsym $mod+b exec chromium
+# Screenshot
+bindsym Print exec flameshot screen -p $HOME/Pictures/Screenshots/
 
 # Lock screen
-bindsym $mod+shift+x exec i3lock -c 24283b
-
-# Screenshot
-bindsym Print exec flameshot screen -p ~/Pictures/Screenshots/
+bindsym $mod+shift+x exec i3lock -c 172030
